@@ -8,7 +8,7 @@ ex:
     asignatura = ['matematicas','ciencias','tecnologia']
     notas_lucia = [5,9,7]
     
-    #Utilizamos la función 'Series' para crear una tabla de valores 'notas_lucia y de indice 'asignaturas'
+    #Utilizamos la función 'Series' para crear una tabla de valores 'notas_lucía' y de índice 'asignaturas'
     
     finales_lucia = pd.Series(notas_lucia,index=asignatura)
 
@@ -16,12 +16,12 @@ ex:
     
     finales_lucia.name ='1r Trimestre'
 
-    #'.index.name'  sirve para introducir el nombre a nuestro indice
+    #'.index.name'  sirve para introducir el nombre a nuestro índice
     
     finales_lucia.index.name = 'Asignaturas'
     finales_lucia
     
-    # utilizamos la función '.to_dict' para convertir nuestra 'Series'en diccionario
+    # utilizamos la función '.to_dict' para convertir nuestra 'Series' en diccionario
     
     diccionario_lucia = finales_lucia.to_dict() 
     diccionario_lucia
@@ -43,10 +43,10 @@ ex1:
     # Utilizamos el modulo 'webbrowser' para abrir el enlace web
     website = 'https://en.as.com/resultados/futbol/primera/clasificacion/'
     webbrowser.open(website)
-    # La función '.read_clipboard()'recoger los datas actuales de 'crtl + C'
+    # La función '.read_clipboard()' recoge los datas actuales de 'crtl + C'
     dataframe_liga = pd.read_clipboard()
     dataframe_liga
-    # Nos devuelve los nombre de la listas de las columnas
+    # Nos devuelve los nombres de la listas de las columnas
     dataframe_liga.columns
 
 ex2:
@@ -94,7 +94,7 @@ ex:
     borrar_fila = dataframe.drop('b')
     borrar_fila
 
-    #la funcion 'axis'nos permite indicarle exactamente en que fila esta la columna que queremos borrar
+    #la funcion 'axis' nos permite indicar exactamente en qué fila está la columna que queremos borrar
     borrar_columna = dataframe.drop('x3', axis=1)
     borrar_columna
 
@@ -103,14 +103,14 @@ __________________________________________________________________________
 
 ############# SELECCIONAR DATOS EN DataFrame ###########
 
-    # 'dataframe'es una funcion que creamos para hacer toda la tabla , '.loc' es una funcion que sirve LOCALIZAR datos atravez del indice que seleccionamos, '['i3'] cogera todo el indice de la fila 3
+    # 'dataframe' es una función que creamos para hacer toda la tabla , '.loc' es una función que sirve para LOCALIZAR datos a través del índice que seleccionamos, '['i3'] cogerá todo el índice de la fila 3
     
     - dataframe.loc['i3']       
 
-    # Hace la misma función que lo explicado con anterioridad a diferencia que aqui vamos en busca de un valor que está en el indice ['i3'] y la columna ['c2']
+    # Hace la misma función que lo explicado con anterioridad a diferencia que aquí vamos en busca de un valor que está en el índice ['i3'] y la columna ['c2']
     - dataframe.loc['i3']['c2'] 
 
-    # Lo que hara es coger todos los valores de la tabla 'dataframe' y devolvernos los valores MAYORES  que 15
+    # Lo que hará es coger todos los valores de la tabla 'dataframe' y devolvernos los valores MAYORES que 15
     - dataframe > 15 
 
 ex : 
@@ -123,17 +123,17 @@ ex :
     lista_columna = ['1','2','3','4']
     dataframe1 = pd.DataFrame(valores1, index=lista_indice1, columns = lista_columna)
 
-    # 'list('abc') nos permite separar los elementos de una lista rapidamente
+    # 'list('abc') nos permite separar los elementos de una lista rápidamente
     lista_indice2 = list('abc')
     lista_columna2 = list('1234')
     valores = np.arange(12).reshape(3,4)
     dataframe2 = pd.DataFrame(valores, index= lista_indice2 , columns= lista_columna2)
 
-    # Sumamos las dos tablas y los valores que no se puedan sumar nos dara de resultado 'NaN'
+    # Sumamos las dos tablas y los valores que no se puedan sumar nos dará de resultado 'NaN'
     dataframe = dataframe1 + dataframe2
     dataframe
 
-    # Conn esta funcion conseguimos visualizar los valores que no se sumaron
+    # Con esta función conseguimos visualizar los valores que no se sumaron
     dataframe2.add(dataframe1, fill_value=0)
 
 
@@ -166,16 +166,16 @@ ex:
 
     valores = np.array([[1,2,3],[4,5,6]])
     dataframe = pd.DataFrame(valores, index = list('ab'), columns= list('123'))
-    # Sirve para ver el valor mas bajo de cada COLUMNA
+    # Sirve para ver el valor más bajo de cada COLUMNA
     dataframe.min()
 
-    # Sirve para ver el valor mas bajo de cada FILA
+    # Sirve para ver el valor más bajo de cada FILA
     dataframe.min(axis= 1)
 
-    # Sirve para ver el valor mas alto de cada COLUMNA
+    # Sirve para ver el valor más alto de cada COLUMNA
     dataframe.max()
 
-    # Sirve para ver el valor mas alto de cada FILA
+    # Sirve para ver el valor más alto de cada FILA
     dataframe.max(axis= 1)
 
     # Sirve para sumar las COLUMNAS
@@ -184,7 +184,7 @@ ex:
     # Sirve para sumar las FILAS
     dataframe.sum(axis =1)
 
-    # Sirve para  ver todas las funciones y  valores
+    # Sirve para ver todas las funciones y valores
     dataframe.describe()
 
 __________________________________________________________________________
@@ -198,9 +198,9 @@ ex:
     valores = [[np.nan,3,5],[6,np.nan,2],[9,7,8]]
     valores
     dataframe = pd.DataFrame(valores, index= [1,2,3], columns= list('abc'))
-    # La función '.isnull()'sirve para identificar los valores nulos en la tabla
+    # La función '.isnull()' sirve para identificar los valores nulos en la tabla
     dataframe.isnull()
-    # BORRA todos las columnas que contienen valores NULOS
+    # BORRA todas las columnas que contienen valores NULOS
     dataframe.dropna(axis=1)
     # BORRA todas las filas que contiene valores NULOS
     dataframe.dropna()
@@ -228,5 +228,5 @@ ex:
     lista_index = [1,2,3,4,5]
     lista_column = ['A','B','C','D','E']
     dataframe = pd.DataFrame(lista_value, index = lista_index, columns= lista_column)
-    # Utilizando la función '.stack'convertimos nuestro DATAFRAME  en SERIE
+    # Utilizando la función '.stack' convertimos nuestro DATAFRAME en SERIE
     dataframe.stack()
